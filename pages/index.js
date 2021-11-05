@@ -6,15 +6,15 @@ const Pokemon = ({ pokemon }) => {
     .filter((x) => x)
     .pop();
   return (
-    <Link href={`/pokemons/${id}`}>
-      <li>{pokemon.name}</li>
-    </Link>
+    <li>
+      <Link href={`/pokemons/${id}`}>{pokemon.name}</Link>
+    </li>
   );
 };
 export default function Home({ pokemons }) {
   return (
     <div>
-      <p>Pokemones</p>
+      <p data-testid="titulo">Pokemones</p>
       <ul>
         {pokemons.map((pokemon) => {
           return <Pokemon pokemon={pokemon} key={pokemon.name} />;
